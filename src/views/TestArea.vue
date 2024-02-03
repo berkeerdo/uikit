@@ -6,9 +6,7 @@
 
 <script>
 export default {
-  name: "Test Area",
-  components: {
-    HelloWorld,
-  },
+  name: "Test-Area",
+  components: {},
 };
 </script>
