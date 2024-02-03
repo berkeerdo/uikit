@@ -1,9 +1,12 @@
 <template>
   <div
     :class="{ dark: darkMode, 'bg-white': !darkMode, 'bg-gray-900': darkMode }"
+    class="min-h-screen"
   >
-    <Navbar />
-    <router-view />
+    <Navbar :darkMode="darkMode" @toggle="toggleDarkMode" />
+    <div class="container mx-auto p-4">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -18,12 +21,6 @@ export default {
   },
   components: {
     Navbar,
-  },
-  provide() {
-    return {
-      darkMode: this.darkMode,
-      toggleDarkMode: this.toggleDarkMode,
-    };
   },
   methods: {
     toggleDarkMode() {
